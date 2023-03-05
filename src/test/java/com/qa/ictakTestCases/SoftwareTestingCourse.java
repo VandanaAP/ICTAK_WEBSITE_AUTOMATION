@@ -17,11 +17,11 @@ import com.qa.utilities.ExcelUtility;
 
 public class SoftwareTestingCourse extends Base {
 
-	STCourse objcourse;
+	STCourse software_testing;
 	@BeforeTest
 	public void driverSetup() {
 		
-		objcourse = new STCourse(driver);
+		software_testing = new STCourse(driver);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 	}
@@ -36,23 +36,24 @@ public class SoftwareTestingCourse extends Base {
 		String email=ExcelUtility.getCellData(0,1,System.getProperty("user.dir")+"\\src\\main\\resources\\RegistationData.xlsx",0);
 		String phnumber=ExcelUtility.getIntegerData(0,2,System.getProperty("user.dir")+"\\src\\main\\resources\\RegistationData.xlsx",0);
 		
-	objcourse.DropDown();
+		software_testing.DropDown();
 	Thread.sleep(1000);
-	objcourse.SoftwareTesting();
+	software_testing.SoftwareTesting();
 	
 	String actualtext="Software Testing";
-	String expectedtext=objcourse.GetText();
+	String expectedtext=software_testing.GetText();
+	 
+	Assert.assertEquals(actualtext, expectedtext);
 	
-	
-	objcourse.Apply();
+	software_testing.Apply();
 	Thread.sleep(1000);
-	objcourse.setName(name);  
+	software_testing.setName(name);  
 	Thread.sleep(3000);
-	objcourse.setEmail(email);
+	software_testing.setEmail(email);
 	Thread.sleep(3000);
-	objcourse.setNumber(phnumber);
+	software_testing.setNumber(phnumber);
 	Thread.sleep(5000);
-	objcourse.Register();
+	software_testing.Register();
 	Thread.sleep(5000);
 	
 String actual="Registration Successfull";
@@ -74,15 +75,15 @@ driver.switchTo().alert().accept();
 		
 	
 	
-	objcourse.Apply();
+	software_testing.Apply();
 	Thread.sleep(1000);
-	objcourse.setName(name);  
+	software_testing.setName(name);  
 	Thread.sleep(3000);
-	objcourse.setEmail(email);
+	software_testing.setEmail(email);
 	Thread.sleep(3000);
-	objcourse.setNumber(phnumber);
+	software_testing.setNumber(phnumber);
 	Thread.sleep(5000);
-	objcourse.Register();
+	software_testing.Register();
 	Thread.sleep(5000);
 String actual="Invalid email";
 	String message=driver.switchTo().alert().getText();
@@ -102,15 +103,15 @@ public void valid_email_invalid_phonenumber() throws IOException, InterruptedExc
 
 	
 	
-	objcourse.Apply();
+	software_testing.Apply();
 	Thread.sleep(1000);
-	objcourse.setName(name);  
+	software_testing.setName(name);  
 	Thread.sleep(3000);
-	objcourse.setEmail(email);
+	software_testing.setEmail(email);
 	Thread.sleep(3000);
-	objcourse.setNumber(phnumber);
+	software_testing.setNumber(phnumber);
 	Thread.sleep(5000);
-	objcourse.Register();
+	software_testing.Register();
 	Thread.sleep(5000);
 	driver.switchTo().alert().accept();
 
@@ -133,15 +134,15 @@ String phnumber=ExcelUtility.getIntegerData(3,2,System.getProperty("user.dir")+"
 
 
 
-objcourse.Apply();
+software_testing.Apply();
 Thread.sleep(1000);
-objcourse.setName(name);  
+software_testing.setName(name);  
 Thread.sleep(3000);
-objcourse.setEmail(email);
+software_testing.setEmail(email);
 Thread.sleep(3000);
-objcourse.setNumber(phnumber);
+software_testing.setNumber(phnumber);
 Thread.sleep(5000);
-objcourse.Register();
+software_testing.Register();
 Thread.sleep(5000);
 
 String message=driver.switchTo().alert().getText();
