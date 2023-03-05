@@ -3,16 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.qa.ictakTestCases.LoginPage_TestCases">
+      <class name="com.qa.ictakTestCases.PartnershipPageValidation">
         <methods>
-          <include name="driverSetup"/>
-          <include name="valid_username_invalid_password"/>
-          <include name="invalid_username_valid_password"/>
+          <include name="partnershipPageValidation_TC_404"/>
           <include name="tearDown"/>
           <include name="settingup"/>
-          <include name="invalid_username_invalid_password"/>
         </methods>
-      </class> <!-- com.qa.ictakTestCases.LoginPage_TestCases -->
+      </class> <!-- com.qa.ictakTestCases.PartnershipPageValidation -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
